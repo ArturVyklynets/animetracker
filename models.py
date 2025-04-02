@@ -1,5 +1,4 @@
-from app import db
-from flask_sqlalchemy import SQLAlchemy
+from db import db
 from slugify import slugify
 
 
