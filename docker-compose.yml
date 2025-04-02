@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: anime_db
+    restart: always
+    environment:
+      POSTGRES_USER: animetracker_db
+      POSTGRES_PASSWORD: 123456789
+      POSTGRES_DB: animeTracker
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    container_name: flask_app
+    restart: always
+    depends_on:
+      - db
+    environment:
+      FLASK_APP: app.py
+      FLASK_RUN_HOST: 0.0.0.0
+      DATABASE_URL: postgresql://animetracker_db:123456789@db:5432/animeTracker
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    command: >
+      sh -c "flask db upgrade && python seed.py && flask run --host=0.0.0.0"
+
+volumes:
+  postgres_data:
