@@ -5,18 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <!-- feed -->
     <div class="feed">
-       <img src="../image/logo.png" width="157px" height="70px" class="logo">
+       <img src="{{url_for('static',filename='images/LOGO.png')}}" width="157px" height="70px" class="logo">
        <div class="search-in-feed">
-        <img src="./image/Compass.png">
+        <img src="{{url_for('static',filename='images/Compass.png')}}">
         <a href="#">Розширений пошук</a>
        </div>
        <div class="mylist-in-feed">
-        <img src="./image/Heart.png">
+        <img src="{{url_for('static',filename='images/Heart.png')}}">
         <a href="#">Мій список</a>
        </div>
        <div class="categorie">
@@ -44,7 +44,7 @@
         <p>Пародія</p>
        </div>
        <div class="log-out">
-        <img src="./image/Log_Out.png">
+        <img src="{{url_for('static',filename='images/Log_Out.png')}}">
         <button type="button" class="but-log_out">
             <p>Log_Out</p>
         </button>
@@ -57,13 +57,13 @@
         <div class="search-in-nav">
             <form method="GET" id="form-in-nav">
                 <button type="submit" class="but-search">
-                    <img src="./image/Search_Magnifying_Glass.png">
+                    <img src="{{url_for('static',filename='images/Search_icon.png')}}">
                 </button>
                 <input type="text"name="anime" placeholder="пошук аніме..." required>
             </form>
         </div>
         <div class="logo-in-nav">
-            <img src="./image/logo-in-nav.png" width="41px" height="41px">
+            <img src="{{url_for('static',filename='images/logo-in-nav.png')}}" width="41px" height="41px">
         </div>
         </div>
         <div class="movie">
@@ -87,7 +87,7 @@
                     <button type="button">Дивитись трейлер</button>
                 </div>
                 <div class="shadow-in-movie">
-                <img src="./image/movie.png"></div>
+                <img src="{{url_for('static',filename='images/movie.png')}}"></div>
             </div>
             <div class="popular-movie">
                 <div class="popular-movie-title">
@@ -107,7 +107,7 @@
                     <button type="button">Дивитись трейлер</button>
                 </div>
                 <div class="shadow-in-movie">
-                <img src="./image/movie.png"></div>
+                <img src="{{url_for('static',filename='images/movie.png')}}"></div>
             </div>
             </div>
         </div>
@@ -115,35 +115,35 @@
         <div class="recom">
             <h3>Рекомендації</h3>
             <div class="rec-box">
-            <img src="./image/film.png">
+            <img src="{{url_for('static',filename='images/film.png')}}">
             <h4>НАЗВА</h4>
             </div>
         </div>
         <div class="recom">
             <h3>Рекомендації</h3>
             <div class="rec-box">
-            <img src="./image/film.png">
+                <img src="{{url_for('static',filename='images/film.png')}}">
             <h4>НАЗВА</h4>
             </div>
         </div>
         <div class="recom">
             <h3>Рекомендації</h3>
             <div class="rec-box">
-            <img src="./image/film.png">
+            <img src="{{url_for('static',filename='images/film.png')}}">
             <h4>НАЗВА</h4>
             </div>
         </div>
         <div class="recom">
             <h3>Рекомендації</h3>
             <div class="rec-box">
-            <img src="./image/film.png">
+            <img src="{{url_for('static',filename='images/film.png')}}">
             <h4>НАЗВА</h4>
             </div>
         </div>
         <div class="recom">
             <h3>Рекомендації</h3>
             <div class="rec-box">
-            <img src="./image/film.png">
+            <img src="{{url_for('static',filename='images/film.png')}}">
             <h4>НАЗВА</h4>
             </div>
         </div>
