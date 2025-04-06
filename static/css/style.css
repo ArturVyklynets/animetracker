@@ -155,28 +155,42 @@ body {
 
 .logo-in-nav {
     width: 47px;
-    height: 46px;
-    border-width: 1px;
+    height: 47px;
     margin-left: 113px;
+    border-radius: 50%;
+    padding: 1px;
+    background: linear-gradient(227.46deg, #A21112 26.07%, rgba(0, 0, 0, 0) 118.83%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.log-in{
-display: flex;
-align-items: center;
-justify-content: center;
-width: 182px;
-height: 49px;
-border-radius: 61px;
-background: rgba(171, 28, 34, 0.7);
+.logo-in-nav img {
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    display: block;
+    border: 3px solid rgba(30, 30, 30, 1);
 }
-.log-in a{
-font-family: "Itim", cursive;
-font-weight: 400;
-font-size: 36px;
-line-height: 100%;
-letter-spacing: 0%;
-text-decoration: none;
-color: rgba(255, 255, 255, 0.8);
+
+.log-in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 182px;
+    height: 49px;
+    border-radius: 61px;
+    background: rgba(171, 28, 34, 0.7);
+}
+
+.log-in a {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 article {
@@ -290,12 +304,12 @@ article {
 .rec-list {
     display: flex;
     flex-direction: row;
+    gap: 49px;
+    margin-left: 47px;
 }
 
-.recom {
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
+.rec-list a {
+    text-decoration: none;
 }
 
 .rec-box {
@@ -307,7 +321,6 @@ article {
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    margin-left: 47px;
 }
 
 .rec-box h4 {
