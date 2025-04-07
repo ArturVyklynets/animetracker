@@ -47,7 +47,7 @@
             <a href="#">Військове</a>
             <a href="#">Пародія</a>
             {% for category in categories %}
-              <a href="#">{{ category.name }}</a>
+            <a href="#">{{ category.name }}</a>
             {% endfor %}
         </div>
         <div class="log-out">
@@ -67,7 +67,7 @@
                     </button>
                     <input type="text" name="anime" placeholder="пошук аніме..." required>
                 </form>
-            </div>            
+            </div>
             <div class="log-in">
                 <a href="#">Log in</a>
             </div>
@@ -79,9 +79,14 @@
         <div class="movie">
             <h3>Популярне</h3>
             <div class="item-movie">
-                <div class="popular-movie">
-                    <div class="popular-movie-title">
-                        <h1>Атака титанів</h1>
+                <div class="movie-slider-wrapper">
+                    <button class="movie-btn" id="movie-prev">&#10094;</button>
+                  
+                    <div class="movie-slider" id="movie-slider">
+                    <div class="movie-slide">
+                      <div class="popular-movie">
+                        <div class="popular-movie-title">                
+                        <h1>Атака титанів 1</h1>
                         <p>Стіни забезпечили людям сторіччя мирного та
                             безпечного життя.Страх опинитись оточеними,
                             відчувати приниження, від того, що люди немов у
@@ -100,9 +105,12 @@
                         <img src="{{url_for('static',filename='images/movie.png')}}">
                     </div>
                 </div>
-                <div class="popular-movie">
-                    <div class="popular-movie-title">
-                        <h1>Атака титанів</h1>
+                    </div>
+
+                    <div class="movie-slide">
+                        <div class="popular-movie">
+                          <div class="popular-movie-title">  
+                        <h1>Атака титанів 2</h1>
                         <p>Стіни забезпечили людям сторіччя мирного та
                             безпечного життя.Страх опинитись оточеними,
                             відчувати приниження, від того, що люди немов у
@@ -123,35 +131,78 @@
                 </div>
             </div>
         </div>
+        <button class="movie-btn" id="movie-next">&#10095;</button>
+            </div></div></div>
+            
         <h3 class="rec-title">Рекомендації</h3>
-        <div class="rec-list">
-        
-            <a href="#"><div class="rec-box">
-                <img src="{{url_for('static',filename='images/film.png')}}">
-                <h4>НАЗВА</h4>
-            </div></a>
-        
-            <a href="#"><div class="rec-box">
-                <img src="{{url_for('static',filename='images/film.png')}}">
-                <h4>НАЗВА</h4>
-            </div></a>
-        
-            <a href="#"><div class="rec-box">
-                <img src="{{url_for('static',filename='images/film.png')}}">
-                <h4>НАЗВА</h4>
-            </div></a>
-        
-            <a href="#"><div class="rec-box">
-                <img src="{{url_for('static',filename='images/film.png')}}">
-                <h4>НАЗВА</h4>
-            </div></a>
-
-            <a href="#"><div class="rec-box">
-                <img src="{{url_for('static',filename='images/film.png')}}">
-                <h4>НАЗВА</h4>
-            </div></a>
+        <div class="rec-list-wrapper">
+            <button class="btn" id="prevBtn">&#10094;</button>
+        <div class="rec-list" id="container">
+                <div class="item">
+                    <a href="#">
+                        <div class="rec-box">
+                            <img src="{{url_for('static',filename='images/film.png')}}">
+                            <h4>НАЗВА 1</h4>
+                        </div>
+                      </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <div class="rec-box">
+                            <img src="{{url_for('static',filename='images/film.png')}}">
+                            <h4>НАЗВА 2</h4>
+                        </div>
+                      </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <div class="rec-box">
+                            <img src="{{url_for('static',filename='images/film.png')}}">
+                            <h4>НАЗВА 3</h4>
+                        </div>
+                      </a>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="rec-box">
+                        <img src="{{url_for('static',filename='images/film.png')}}">
+                        <h4>НАЗВА 4</h4>
+                    </div>
+                  </a></div>
+                <div class="item"><a href="#">
+                    <div class="rec-box">
+                        <img src="{{url_for('static',filename='images/film.png')}}">
+                        <h4>НАЗВА 5</h4>
+                    </div>
+                  </a></div>
+                <div class="item"><a href="#">
+                    <div class="rec-box">
+                        <img src="{{url_for('static',filename='images/film.png')}}">
+                        <h4>НАЗВА 6</h4>
+                    </div>
+                  </a></div>
+                <div class="item"><a href="#">
+                    <div class="rec-box">
+                        <img src="{{url_for('static',filename='images/film.png')}}">
+                        <h4>НАЗВА 7</h4>
+                    </div>
+                  </a></div>
+                <div class="item">
+                    <a href="#">
+                        <div class="rec-box">
+                            <img src="{{url_for('static',filename='images/film.png')}}">
+                            <h4>НАЗВА 8</h4>
+                        </div>
+                      </a>
+                </div>
+                <div class="item"><a href="#">
+                    <div class="rec-box">
+                        <img src="{{url_for('static',filename='images/film.png')}}">
+                        <h4>НАЗВА 9</h4>
+                    </div>
+                  </a></div></div>
+                  <button class="btn" id="nextBtn">&#10095;</button> 
         </div>
     </article>
 </body>
-
+<script src="{{url_for('static',filename='js/main.js')}}"></script>
 </html>
