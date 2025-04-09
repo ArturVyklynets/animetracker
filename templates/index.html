@@ -2,205 +2,156 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
-    <!-- feed -->
-    <div class="feed">
-        <a href="#">
-            <img src="{{url_for('static',filename='images/LOGO.png')}}" width="157px" height="70px" class="logo">
-        </a>
-        <a href="#" class="search-in-feed">
-            <img src="{{url_for('static',filename='images/Compass.png')}}">
-            <p>Розширений пошук</p>
-        </a>
-        <a href="#" class="mylist-in-feed">
-            <img src="{{url_for('static',filename='images/Heart.png')}}">
-            <p>Мій список</p>
-        </a>
-        <div class="categorie">
-            <span class="title-in-categorie">Категорії</span>
-            <a href="#">Екшен</a>
-            <a href="#">Пригоди</a>
-            <a href="#">Фентезі</a>
-            <a href="#">Ісекай</a>
-            <a href="#">Наукова фантастика</a>
-            <a href="#">Хорор</a>
-            <a href="#">Детектив</a>
-            <a href="#">Психологічний</a>
-            <a href="#">Романтика</a>
-            <a href="#">Комедія</a>
-            <a href="#">Драма</a>
-            <a href="#">Спортивне</a>
-            <a href="#">Шкільне</a>
-            <a href="#">Музичне</a>
-            <a href="#">Еччі</a>
-            <a href="#">Яой</a>
-            <a href="#">Юрі</a>
-            <a href="#">Повсякденність</a>
-            <a href="#">Історичне</a>
-            <a href="#">Військове</a>
-            <a href="#">Пародія</a>
-            {% for category in categories %}
-            <a href="#">{{ category.name }}</a>
-            {% endfor %}
-        </div>
-        <div class="log-out">
-            <img src="{{url_for('static',filename='images/Log_Out.png')}}">
-            <a href="#" class="but-log_out">Log_Out</a>
-            </button>
-        </div>
+  <!-- feed -->
+  <div class="feed">
+    <a href="#">
+      <img src="{{url_for('static',filename='images/LOGO.png')}}" width="157px" height="70px" class="logo">
+    </a>
+    <a href="#" class="search-in-feed">
+      <img src="{{url_for('static',filename='images/Compass.png')}}">
+      <p>Розширений пошук</p>
+    </a>
+    <a href="#" class="mylist-in-feed">
+      <img src="{{url_for('static',filename='images/Heart.png')}}">
+      <p>Мій список</p>
+    </a>
+    <div class="categorie">
+      <span class="title-in-categorie">Категорії</span>
+      {% for category in categories %}
+      <a href="#">{{ category.name }}</a>
+      {% endfor %}
     </div>
-    <!-- article -->
-    <!-- Navbar -->
-    <article>
-        <div class="nav">
-            <div class="search-in-nav">
-                <form method="GET" id="form-in-nav">
-                    <button type="submit" class="but-search">
-                        <img src="{{url_for('static',filename='images/Search_icon.png')}}">
-                    </button>
-                    <input type="text" name="anime" placeholder="пошук аніме..." required>
-                </form>
-            </div>
-            <div class="log-in">
-                <a href="#">Log in</a>
-            </div>
-            <!-- <div class="logo-in-nav">
+    <div class="log-out">
+      <img src="{{url_for('static',filename='images/Log_Out.png')}}">
+      <a href="#" class="but-log_out">Log_Out</a>
+      </button>
+    </div>
+  </div>
+  <!-- article -->
+  <!-- Navbar -->
+  <article>
+    <div class="nav">
+      <div class="search-in-nav">
+        <form method="GET" id="form-in-nav">
+          <button type="submit" class="but-search">
+            <img src="{{url_for('static',filename='images/Search_icon.png')}}">
+          </button>
+          <input type="text" name="anime" placeholder="пошук аніме..." required>
+        </form>
+      </div>
+      <div class="log-in">
+        <a href="#">Log in</a>
+      </div>
+      <!-- <div class="logo-in-nav">
                 <img src="{{url_for('static',filename='images/logo-in-nav.png')}}" width="41px" height="41px">
             </div> -->
-        </div>
-        <!-- Основна частина -->
-        <div class="movie">
-            <h3>Популярне</h3>
-            <div class="item-movie">
-                <div class="movie-slider-wrapper">
-                    <button class="movie-btn" id="movie-prev">&#10094;</button>
-                  
-                    <div class="movie-slider" id="movie-slider">
-                    <div class="movie-slide">
-                      <div class="popular-movie">
-                        <div class="popular-movie-title">                
-                        <h1>Атака титанів 1</h1>
-                        <p>Стіни забезпечили людям сторіччя мирного та
-                            безпечного життя.Страх опинитись оточеними,
-                            відчувати приниження, від того, що люди немов у
-                            клітціі, залишився далеко позаду. Поки... не
-                            розпочалася битва за виживання людства, після
-                            того, як титани прорвалися крізь стіну.Зазнавши
-                            численних втрат як серед солдатів, так і серед
-                            мирного населення,люди з'ясували, що деякі титани ховаються серед них.
-                            Нарешті, через п'ять років
-                            після падіння першої стіни, людям вдалося схопити
-                            одного з замаскованих титанів:
-                            Енні Леонхарт. Однак... наступна загроза була зовсім близько.</p>
-                        <a href="#">Дивитись трейлер</a>
-                    </div>
-                    <div class="shadow-in-movie">
-                        <img src="{{url_for('static',filename='images/movie.png')}}">
-                    </div>
-                </div>
-                    </div>
+    </div>
+    <!-- Основна частина -->
+    <div class="movie">
+      <h3>Популярне</h3>
+      <div class="item-movie">
+        <div class="movie-slider-wrapper">
+          <button class="movie-btn" id="movie-prev">&#10094;</button>
 
-                    <div class="movie-slide">
-                        <div class="popular-movie">
-                          <div class="popular-movie-title">  
-                        <h1>Атака титанів 2</h1>
-                        <p>Стіни забезпечили людям сторіччя мирного та
-                            безпечного життя.Страх опинитись оточеними,
-                            відчувати приниження, від того, що люди немов у
-                            клітціі, залишився далеко позаду. Поки... не
-                            розпочалася битва за виживання людства, після
-                            того, як титани прорвалися крізь стіну.Зазнавши
-                            численних втрат як серед солдатів, так і серед
-                            мирного населення,люди з'ясували, що деякі титани ховаються серед них.
-                            Нарешті, через п'ять років
-                            після падіння першої стіни, людям вдалося схопити
-                            одного з замаскованих титанів:
-                            Енні Леонхарт. Однак... наступна загроза була зовсім близько.</p>
-                        <a href="#">Дивитись трейлер</a>
-                    </div>
-                    <div class="shadow-in-movie">
-                        <img src="{{url_for('static',filename='images/movie.png')}}">
-                    </div>
+          <div class="movie-slider" id="movie-slider">
+            {% for anime in popular_anime %}
+            <div class="movie-slide">
+              <div class="popular-movie">
+                <div class="popular-movie-title">
+                  <h1>{{ anime.title }}</h1>
+                  <p>{{ anime.synopsis[:800] }}...</p>
+                  <a href="#">Дивитись трейлер</a>
                 </div>
+                <div class="shadow-in-movie">
+                  <!-- <img src="{{url_for('static',filename='images/movie.png')}}"> -->
+                  <img src="{{ anime.image_url }}" alt="{{ anime.title }}">
+                </div>
+              </div>
             </div>
+            {% endfor %}
+          </div>
+          <button class="movie-btn" id="movie-next">&#10095;</button>
         </div>
-        <button class="movie-btn" id="movie-next">&#10095;</button>
-            </div></div></div>
-            
-        <h3 class="rec-title">Рекомендації</h3>
-        <div class="rec-list-wrapper">
-        <div class="rec-list" id="container">
-                <div class="item">
-                    <a href="#">
-                        <div class="rec-box">
-                            <img src="{{url_for('static',filename='images/film.png')}}">
-                            <h4>НАЗВА 1</h4>
-                        </div>
-                      </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <div class="rec-box">
-                            <img src="{{url_for('static',filename='images/film.png')}}">
-                            <h4>НАЗВА 2</h4>
-                        </div>
-                      </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <div class="rec-box">
-                            <img src="{{url_for('static',filename='images/film.png')}}">
-                            <h4>НАЗВА 3</h4>
-                        </div>
-                      </a>
-                </div>
-                <div class="item"><a href="#">
-                    <div class="rec-box">
-                        <img src="{{url_for('static',filename='images/film.png')}}">
-                        <h4>НАЗВА 4</h4>
-                    </div>
-                  </a></div>
-                <div class="item"><a href="#">
-                    <div class="rec-box">
-                        <img src="{{url_for('static',filename='images/film.png')}}">
-                        <h4>НАЗВА 5</h4>
-                    </div>
-                  </a></div>
-                <div class="item"><a href="#">
-                    <div class="rec-box">
-                        <img src="{{url_for('static',filename='images/film.png')}}">
-                        <h4>НАЗВА 6</h4>
-                    </div>
-                  </a></div>
-                <div class="item"><a href="#">
-                    <div class="rec-box">
-                        <img src="{{url_for('static',filename='images/film.png')}}">
-                        <h4>НАЗВА 7</h4>
-                    </div>
-                  </a></div>
-                <div class="item">
-                    <a href="#">
-                        <div class="rec-box">
-                            <img src="{{url_for('static',filename='images/film.png')}}">
-                            <h4>НАЗВА 8</h4>
-                        </div>
-                      </a>
-                </div>
-                <div class="item"><a href="#">
-                    <div class="rec-box">
-                        <img src="{{url_for('static',filename='images/film.png')}}">
-                        <h4>НАЗВА 9</h4>
-                    </div>
-                  </a></div></div>
+      </div>
+    </div>
+
+    <h3 class="rec-title">Рекомендації</h3>
+    <div class="rec-list-wrapper">
+      <div class="rec-list" id="container">
+        <div class="item">
+          <a href="#">
+            <div class="rec-box">
+              <img src="{{url_for('static',filename='images/film.png')}}">
+              <h4>НАЗВА 1</h4>
+            </div>
+          </a>
         </div>
-    </article>
+        <div class="item">
+          <a href="#">
+            <div class="rec-box">
+              <img src="{{url_for('static',filename='images/film.png')}}">
+              <h4>НАЗВА 2</h4>
+            </div>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <div class="rec-box">
+              <img src="{{url_for('static',filename='images/film.png')}}">
+              <h4>НАЗВА 3</h4>
+            </div>
+          </a>
+        </div>
+        <div class="item"><a href="#">
+            <div class="rec-box">
+              <img src="{{url_for('static',filename='images/film.png')}}">
+              <h4>НАЗВА 4</h4>
+            </div>
+          </a></div>
+        <div class="item"><a href="#">
+            <div class="rec-box">
+              <img src="{{url_for('static',filename='images/film.png')}}">
+              <h4>НАЗВА 5</h4>
+            </div>
+          </a></div>
+        <div class="item"><a href="#">
+            <div class="rec-box">
+              <img src="{{url_for('static',filename='images/film.png')}}">
+              <h4>НАЗВА 6</h4>
+            </div>
+          </a></div>
+        <div class="item"><a href="#">
+            <div class="rec-box">
+              <img src="{{url_for('static',filename='images/film.png')}}">
+              <h4>НАЗВА 7</h4>
+            </div>
+          </a></div>
+        <div class="item">
+          <a href="#">
+            <div class="rec-box">
+              <img src="{{url_for('static',filename='images/film.png')}}">
+              <h4>НАЗВА 8</h4>
+            </div>
+          </a>
+        </div>
+        <div class="item"><a href="#">
+            <div class="rec-box">
+              <img src="{{url_for('static',filename='images/film.png')}}">
+              <h4>НАЗВА 9</h4>
+            </div>
+          </a></div>
+      </div>
+    </div>
+  </article>
 </body>
 <script src="{{url_for('static',filename='js/main.js')}}"></script>
+
 </html>
