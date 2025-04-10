@@ -1,8 +1,23 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
+from flask_dance.contrib.google import make_google_blueprint, google
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
+app.secret_key = os.getenv("SECRET_KEY")
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
+google_bp = make_google_blueprint(
+    client_id=os.getenv("GOOGLE_CLIENT_ID"),
+    client_secret=os.getenv("GOOGLE_CLIENT_SECRET"),
+    scope=[
+        "https://www.googleapis.com/auth/userinfo.email", 
+        "https://www.googleapis.com/auth/userinfo.profile", 
+        "openid"
+    ]
+)
+app.register_blueprint(google_bp, url_prefix="/login")
 
 uri = os.getenv('DATABASE_URL')
 if uri and uri.startswith('postgres://'):
@@ -59,6 +74,13 @@ else:
 
 @app.route("/")
 def index():
+    # if not google.authorized:
+    #     return redirect(url_for("google.login"))
+    
+    # resp = google.get("/oauth2/v2/userinfo")
+    # user_info = resp.json()
+    # user_email = user_info["email"]
+
     if db_enabled:
         categories = Category.query.all()
         popular_anime = PopularAnime.query.all()
@@ -67,7 +89,6 @@ def index():
         popular_anime = fake_anime
 
     return render_template("index.html", categories=categories, popular_anime=popular_anime)
-
 @app.route("/test-db")
 def test_db():
     if db_enabled:
