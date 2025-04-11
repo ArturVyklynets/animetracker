@@ -288,6 +288,11 @@ article {
     width: 117px;
     height: 464px;
 }
+.shadow-in-movie img {
+    width: 402px;
+  height: 464px;
+  object-fit: contain; 
+}
 /* slider */
 .movie-slider-wrapper {
     display: flex;
