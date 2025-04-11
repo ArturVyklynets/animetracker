@@ -336,32 +336,23 @@ article {
 }
 
 .rec-list-wrapper {
-    overflow: hidden;
-    width: 720px; 
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 35px;
   }
   
   .rec-list {
     display: flex;
     flex-direction: row;
-    gap: 20px;
-    cursor: grab;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    user-select: none;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; 
+    gap: 49px;
+    margin-left: 0;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
   }
   
-  .rec-list::-webkit-scrollbar {
-    display: none;
-  }
-      
-      .rec-list.active {
-        cursor: grabbing;
-      }
-  
-  
+
 .rec-list a {
     text-decoration: none;
 }
@@ -375,7 +366,6 @@ article {
     flex-direction: column;
     align-items: center;
     gap: 5px;
-
 }
 
 .rec-box h4 {
@@ -390,13 +380,24 @@ article {
     line-height: 81%;
     letter-spacing: 5%;
 }
+/* slider*/
 .item {
-    flex: 0 0 224px;
-    display: block;
+    display: none;
   }
+  
   .item.show {
     display: block;
   }
-
   
-
+  .btn {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+  }
+  
