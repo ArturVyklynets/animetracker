@@ -2,7 +2,7 @@ import requests
 from datetime import datetime
 from app import app
 from db import db
-from models import PopularAnime
+from app.models import PopularAnime
 from translate import translate_text
 
 def update_popular_anime():

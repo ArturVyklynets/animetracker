@@ -1,5 +1,5 @@
 from app import db, app
-from models import Category
+from app.models import Category
 
 def seed_categories():
     categories = [
