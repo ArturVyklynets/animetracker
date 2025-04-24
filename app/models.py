@@ -8,5 +8,6 @@ class Category(db.Model):
 class PopularAnime(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
+    mal_id = db.Column(db.Integer, nullable=False, unique=True)
     synopsis = db.Column(db.Text, nullable=True)
     image_url = db.Column(db.String(300), nullable=True)

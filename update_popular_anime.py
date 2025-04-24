@@ -1,9 +1,10 @@
 import requests
 from datetime import datetime
-from app import app
-from db import db
-from app.models import PopularAnime
+from app import create_app
+from app.models import db
 from translate import translate_text
+
+app = create_app()
 
 def update_popular_anime():
     url = "https://api.jikan.moe/v4/top/anime"
@@ -16,6 +17,7 @@ def update_popular_anime():
     data = response.json().get("data", [])
 
     with app.app_context():
+        from app.models import PopularAnime
         for anime in data:
             english_title = next((title["title"] for title in anime["titles"] if title["type"] == "English"), None)
 
