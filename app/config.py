@@ -9,4 +9,4 @@ class Config:
     SQLALCHEMY_DATABASE_URI = uri
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     DB_ENABLED = bool(uri)
-    # DB_ENABLED = False
+    DB_ENABLED = False
