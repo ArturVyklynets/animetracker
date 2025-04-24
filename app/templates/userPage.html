@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Userpage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/userPage.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="profile">
+                <img src="{{url_for('static',filename='images/Ellipse.jpg')}}" alt="Avatar" class="avatar">
+                <span class="nickname">Nickname</span>
+            </div>
+            <div class="header-icons">
+                <button class="icon-btn">
+                    <img src="{{url_for('static',filename='images/home.png')}}" alt="Friends">
+                </button>
+                <button class="icon-btn_2">
+                    <img src="{{url_for('static',filename='images/Icon (1).png')}}" alt="Home">
+                </button>
+            </div>
+        </header>
+
+        <!-- Search bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="пошук аніме в бібліотеці...">
+        </div>
+
+        <!-- Main content -->
+        <div class="content">
+            <!-- Anime grid -->
+            <div class="anime-grid">
+                <!-- Anime cards - repeat 12 times -->
+                <div class="anime-card">
+                    <img src="{{url_for('static',filename='images/Rectangle 19.jpg')}}" alt="Anime" class="anime-img">
+                    <div class="anime-title">НАЗВА</div>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+                <div class="anime-card">
+                    <img src="{{url_for('static',filename='images/Rectangle 19.jpg')}}" alt="Anime" class="anime-img">
+                    <div class="anime-title">НАЗВА</div>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+                <div class="anime-card">
+                    <img src="{{url_for('static',filename='images/Rectangle 19.jpg')}}" alt="Anime" class="anime-img">
+                    <div class="anime-title">НАЗВА</div>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+                <div class="anime-card">
+                    <img src="{{url_for('static',filename='images/Rectangle 19.jpg')}}" alt="Anime" class="anime-img">
+                    <div class="anime-title">НАЗВА</div>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+                <div class="anime-card">
+                    <img src="{{url_for('static',filename='images/Rectangle 19.jpg')}}" alt="Anime" class="anime-img">
+                    <div class="anime-title">НАЗВА</div>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+                <div class="anime-card">
+                    <img src="{{url_for('static',filename='images/Rectangle 19.jpg')}}" alt="Anime" class="anime-img">
+                    <div class="anime-title">НАЗВА</div>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+                <div class="anime-card">
+                    <img src="{{url_for('static',filename='images/Rectangle 19.jpg')}}" alt="Anime" class="anime-img">
+                    <div class="anime-title">НАЗВА</div>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+                <div class="anime-card">
+                    <img src="{{url_for('static',filename='images/Rectangle 19.jpg')}}" alt="Anime" class="anime-img">
+                    <div class="anime-title">НАЗВА</div>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+                <div class="anime-card">
+                    <img src="{{url_for('static',filename='images/Rectangle 19.jpg')}}" alt="Anime" class="anime-img">
+                    <div class="anime-title">НАЗВА</div>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+                <div class="anime-card">
+                    <img src="{{url_for('static',filename='images/Rectangle 19.jpg')}}" alt="Anime" class="anime-img">
+                    <div class="anime-title">НАЗВА</div>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+                <div class="anime-card">
+                    <img src="{{url_for('static',filename='images/Rectangle 19.jpg')}}" alt="Anime" class="anime-img">
+                    <div class="anime-title">НАЗВА</div>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+                <div class="anime-card">
+                    <img src="{{url_for('static',filename='images/Rectangle 19.jpg')}}" alt="Anime" class="anime-img">
+                    <div class="anime-title">НАЗВА</div>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+                <div class="anime-card">
+                    <img src="{{url_for('static',filename='images/Rectangle 19.jpg')}}" alt="Anime" class="anime-img">
+                    <div class="anime-title">НАЗВА</div>
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-overlay">
+                    <h1>Мій список</h1>
+                    <button>Весь список</button>
+                    <button>Дивлюсь зараз</button>
+                    <button>Хочу подивитись</button>
+                    <button>Переглянуто</button>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+
+</html>

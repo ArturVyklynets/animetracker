@@ -26,7 +26,7 @@
     <div class="categorie">
       <span class="title-in-categorie">Категорії</span>
       {% for category in categories %}
-      <a href="#">{{ category.name }}</a>
+      <a href="{{ url_for('main.category_anime', slug=category.slug) }}">{{ category.name }}</a>
       {% endfor %}
     </div>
     <div class="log-out">

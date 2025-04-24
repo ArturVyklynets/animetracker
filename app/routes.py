@@ -1,6 +1,8 @@
+import requests
 from flask import Blueprint, render_template
 from flask import redirect, url_for
 from .config import Config
+
 
 main = Blueprint("main", __name__)
 
@@ -34,3 +36,47 @@ def test_db():
 @main.route('/404')
 def page_not_found():
     return render_template('404.html'), 404
+
+@main.route('/userpage')
+def get_user_page():
+    return render_template('userPage.html')
+
+@main.route('/category/<slug>')
+def category_anime(slug):
+    if Config.DB_ENABLED:
+        category = Category.query.filter_by(slug=slug).first_or_404()
+        genre_name = category.slug
+    else:
+        category = next((c for c in fake_categories if c["slug"] == slug), None)
+        if not category:
+            return redirect(url_for('main.page_not_found'))
+        genre_name = category["name"]
+
+    query = """
+    query ($genre: String) {
+      Page(perPage: 10) {
+        media(genre_in: [$genre], type: ANIME) {
+          id
+          title {
+            romaji
+          }
+          coverImage {
+            large
+          }
+          averageScore
+        }
+      }
+    }
+    """
+
+    variables = {"genre": genre_name}
+    print("Genre sent to AniList:", genre_name)
+    response = requests.post("https://graphql.anilist.co", json={"query": query, "variables": variables})
+
+    if response.status_code != 200:
+        return render_template('error.html', message="Помилка при запиті до API")
+
+    anime_list = response.json()["data"]["Page"]["media"]
+    print("Отримано:", anime_list)
+
+    return render_template('category_anime.html', category=category, anime_list=anime_list)

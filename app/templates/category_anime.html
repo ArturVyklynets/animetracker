@@ -1,0 +1,14 @@
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+<h2>{{ category.name }}</h2>
+<div class="anime-list">
+  {% for anime in anime_list %}
+    <div class="anime-card">
+      <img src="{{ anime.coverImage.large }}" alt="{{ anime.title.romaji }}">
+      <h3>{{ anime.title.romaji }}</h3>
+      <p>Оцінка: {{ anime.averageScore }}</p>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
