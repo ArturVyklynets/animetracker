@@ -41,6 +41,10 @@ def page_not_found():
 def get_user_page():
     return render_template('userPage.html')
 
+@main.route('/search_category')
+def get_search_category():
+    return render_template('search_category.html')
+
 @main.route('/category/<slug>')
 def category_anime(slug):
     if Config.DB_ENABLED:
